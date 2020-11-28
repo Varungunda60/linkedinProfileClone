@@ -43,15 +43,15 @@ public class Profile {
 	@JoinColumn(name="login_id",nullable=false)
     private  User user;
 	
-	@OneToMany(mappedBy = "experience", fetch = FetchType.LAZY,
+	@OneToMany(mappedBy = "profile", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Experience> experience;
 	
-	@OneToMany(mappedBy = "education", fetch = FetchType.LAZY,
+	@OneToMany(mappedBy = "profile", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Education> education;
 	
-	@OneToMany(mappedBy = "skills", fetch = FetchType.LAZY,
+	@OneToMany(mappedBy = "profile", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Skills> skills;
 	

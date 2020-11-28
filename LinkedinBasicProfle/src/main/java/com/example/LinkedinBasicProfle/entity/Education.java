@@ -33,7 +33,7 @@ public class Education {
 	private Integer grade;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "profile_id", nullable = false)
+    @JoinColumn(name = "profileId", nullable = false)
     private Profile profile;
 	
 	public Education() {}

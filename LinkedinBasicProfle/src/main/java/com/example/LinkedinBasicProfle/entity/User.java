@@ -25,7 +25,7 @@ public class User {
     @Column(name = "password",nullable = false)
     private String password;
 
-    @OneToOne(mappedBy = "profile", fetch = FetchType.LAZY,
+    @OneToOne(mappedBy = "user", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private  Profile profile;
 

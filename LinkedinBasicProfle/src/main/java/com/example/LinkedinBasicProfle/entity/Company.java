@@ -27,7 +27,7 @@ public class Company {
 	private String location;
 	private String industryType;
 	
-	@OneToMany(mappedBy="experienceid",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="company",fetch=FetchType.LAZY,cascade=CascadeType.ALL)
 	private List<Experience> experiences;
 
 	public Company(){
