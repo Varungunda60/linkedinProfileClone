@@ -38,9 +38,8 @@ public class Profile {
 	@Column(name = "image_url")
 	private String Url;
 	
-	
 	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="login_id",nullable=false)
+	@JoinColumn(name="login_id",nullable=false,unique = true)
     private  User user;
 	
 	@OneToMany(mappedBy = "profile", fetch = FetchType.LAZY,
