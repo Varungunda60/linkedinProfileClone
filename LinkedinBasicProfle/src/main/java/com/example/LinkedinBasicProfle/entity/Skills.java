@@ -19,8 +19,8 @@ public class Skills {
 	private Long id;
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "profile_id", nullable = false)
-	private Profile profile;
+    @JoinColumn(name = "user_id", nullable = false)
+	private User user;
 	
 	public Skills() {}
 

@@ -35,8 +35,8 @@ public class Experience {
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
-	@JoinColumn(name="ProfileId",nullable=false)
-	private Profile profile;
+	@JoinColumn(name="UserId",nullable=false)
+	private User user;
 	
 	public Experience() {
 		
@@ -66,7 +66,7 @@ public class Experience {
 	public String toString() {
 		return "Experience [experienceid=" + experienceid + ", title=" + title + ", headline=" + headline
 				+ ", startDate=" + startDate + ", endDate=" + endDate + ", employmentType=" + employmentType
-				+ ", company=" + company + ", profile=" + profile + "]";
+				+ ", company=" + company + ", profile=" ;
 	}
 
 	public Long getExperienceid() {
