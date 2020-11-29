@@ -23,9 +23,7 @@ public class UserService {
         return userRepositry.findById(id);
     }
 
-    public void addUser(User user){
-        userRepositry.save(user);
-    }
+
 
     public Long saveUser(User user) {
         return userRepositry.save(user).getId();
