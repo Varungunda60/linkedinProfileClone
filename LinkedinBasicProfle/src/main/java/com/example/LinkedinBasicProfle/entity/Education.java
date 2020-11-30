@@ -1,6 +1,10 @@
 package com.example.LinkedinBasicProfle.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -26,7 +30,8 @@ public class Education {
 	
 	@Column(nullable=false)
 	private String feildOfStudy;
-	
+
+	@JsonFormat(pattern="yyyy-MM-dd")
 	private Date StartDate;
 	private Date EndDate;
 	
@@ -34,8 +39,17 @@ public class Education {
 	
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = false)
+	@JsonBackReference
     private User user;
-	
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	public Education() {}
 
 	public String getSchoolName() {

@@ -1,5 +1,8 @@
 package com.example.LinkedinBasicProfle.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -38,6 +41,7 @@ public class User {
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
 			cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<Education> education;
 
 	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY,
