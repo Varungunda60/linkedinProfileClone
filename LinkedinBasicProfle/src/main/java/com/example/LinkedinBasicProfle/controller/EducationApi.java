@@ -25,7 +25,7 @@ public class EducationApi {
     @PostMapping("user/education/{id}")
     public ResponseEntity<Object> addEducatoin(@PathVariable Long id, @RequestBody Education education, UriComponentsBuilder uriComponentsBuilder){
         Long idCheck=educationService.addEducation(id,education);
-        UriComponents uriComponents=uriComponentsBuilder.path("/user/{id}").buildAndExpand(education.getUser().getId());
+        UriComponents uriComponents=uriComponentsBuilder.path("/user/{idCheck}").buildAndExpand(education.getUser().getId());
         URI location = uriComponents.toUri();
         return ResponseEntity.created(location).build();
     }
